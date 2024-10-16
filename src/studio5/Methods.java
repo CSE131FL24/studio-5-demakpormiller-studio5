@@ -13,11 +13,19 @@ public class Methods {
 	 * @param y2 y-coordinate of another point
 	 * @return the Euclidean distance between (x1,y1) and (x2,y2)
 	 */
-	public static double distanceBetween(double x1, double y1, double x2, double y2) {
-		double distance = 0;
+	public static double distance(double x1, double y1, double x2, double y2) {
 		// FIXME: Hint use Math methods (e.g. Math.sqrt) to compute the distance
 		
-		return distance;
+			// TODO Auto-generated method stub
+			double distanceX = x2 - x1;
+			double squaredX = distanceX * distanceX;
+			double distanceY = y2 - y1;
+			double squaredY = distanceY * distanceY;
+			double presquared =  squaredX + squaredY;
+			double finalDistance = Math.sqrt(presquared);
+			return finalDistance;
+
+
 	}
 
 	/**
@@ -34,19 +42,23 @@ public class Methods {
 		// TODO: Draw the remaining rings of the bull's eye
 		// Blue ring with 3.0/4.0 the radius
 		// suggested rgb values: 0, 109, 219
-
-		
+		StdDraw.setPenColor(0, 109, 219);
+		StdDraw.filledCircle(x, y, (radius * 3)/4);
 
 		// Red ring with 1.0/2.0 the radius
 		// suggested rgb values: 146, 0, 0
-
+		StdDraw.setPenColor(146, 0, 0);
+		StdDraw.filledCircle(x, y, (radius * 1)/2);
 		
 
 		// Yellow ring with 1.0/4.0 the radius
 		// suggested rgb values: 255, 255, 109
-
+		StdDraw.setPenColor(255, 255, 109);
+		StdDraw.filledCircle(x, y, (radius * 1)/4);
 		
 	}
+	
+	// drawBullsEye(.4
 
 	/**
 	 * Return a new String which is the original source String with all occurrences

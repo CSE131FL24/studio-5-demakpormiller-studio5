@@ -13,19 +13,7 @@ import support.cse131.DrawCase;
  */
 public class DrawBullsEyesDebugApp {
 	public static void main(String[] args) {
-		SwingUtilities.invokeLater(() -> {
-			for (DrawCase drawCase : DrawBullsEyes.getCases()) {
-				StdDraw.clear();
-				drawCase.draw();
-				Object[] options = { "Continue", "Exit" };
-				if (DialogBoxes.askUser(drawCase.getText(), DrawBullsEyesDebugApp.class.getSimpleName(),
-						JOptionPane.QUESTION_MESSAGE, options)) {
-					//pass
-				} else {
-					break;
-				}
-			}
-			System.exit(0);
-		});
+		StdDraw.clear();
+		Methods.drawBullsEye(.5,.5, .4);
 	}
 }
